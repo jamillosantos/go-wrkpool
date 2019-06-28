@@ -1,4 +1,4 @@
-# wrkpool
+# wrkpool [![CircleCI](https://circleci.com/gh/jamillosantos/go-wrkpool.svg?style=shield)](https://circleci.com/gh/lab259/argo) [![Go Report Card](https://goreportcard.com/badge/github.com/jamillosantos/go-wrkpool)](https://goreportcard.com/report/github.com/jamillosantos/go-wrkpool) [![codecov](https://codecov.io/gh/jamillosantos/go-wrkpool/branch/master/graph/badge.svg)](https://codecov.io/gh/jamillosantos/go-wrkpool)
 
 ## What is `wrkpool`
 
