@@ -11,25 +11,14 @@ jobs:
             - deps-{{ .Branch }}-
             - deps-
       - run:
-          name: Setup .netrc
-          command: |
-            echo "machine github.com" > $HOME/.netrc
-            echo "    login $GITHUB_USERNAME" >> $HOME/.netrc
-            echo "    password $GITHUB_TOKEN" >> $HOME/.netrc
-      - run:
-          name: Installing Ginkgo
-          command: go get -u github.com/onsi/ginkgo/ginkgo
-      - run:
           name: Installing dependencies
           command: go mod download
       - run:
           name: Run tests
           command: |
-            go test
+            go test -cover -coverprofile=coverage.txt -covermode=atomic
       - run: bash <(curl -s https://codecov.io/bash)
       - save_cache:
           key: deps-{{ .Branch }}-{{ checksum "go.sum" }}
           paths:
             - /go/pkg/mod
-      - store_test_results:
-          path: test-results
